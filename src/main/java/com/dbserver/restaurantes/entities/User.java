@@ -7,22 +7,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "db_users")
+@Table(name = "tb_users")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String nome;
 	private String email;
 	private String password;
 
 	public User() {
 	}
 
-	public User(Long id, String name, String email, String password) {
+	public User(Long id, String nome, String email, String password) {
 		this.id = id;
-		this.name = name;
+		this.nome = nome;
 		this.email = email;
 		this.password = password;
 	}
@@ -36,11 +36,11 @@ public class User {
 	}
 
 	public String getName() {
-		return name;
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {

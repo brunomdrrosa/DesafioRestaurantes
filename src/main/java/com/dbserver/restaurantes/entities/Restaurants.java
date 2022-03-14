@@ -7,13 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "db_restaurants")
+@Table(name = "tb_restaurants")
 public class Restaurants {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String restaurant;
 	private String address;
 	private String website;
 	private String description;
@@ -21,9 +21,9 @@ public class Restaurants {
 	public Restaurants() {
 	}
 
-	public Restaurants(Long id, String name, String address, String website, String description) {
+	public Restaurants(Long id, String restaurant, String address, String website, String description) {
 		this.id = id;
-		this.name = name;
+		this.restaurant = restaurant;
 		this.address = address;
 		this.website = website;
 		this.description = description;
@@ -38,11 +38,11 @@ public class Restaurants {
 	}
 
 	public String getName() {
-		return name;
+		return restaurant;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String restaurant) {
+		this.restaurant = restaurant;
 	}
 
 	public String getAddress() {
