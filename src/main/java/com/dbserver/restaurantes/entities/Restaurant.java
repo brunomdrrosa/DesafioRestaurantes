@@ -8,22 +8,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_restaurants")
-public class Restaurants {
+public class Restaurant {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String restaurant;
+	private String nome;
 	private String address;
 	private String website;
 	private String description;
 
-	public Restaurants() {
+	public Restaurant() {
 	}
 
-	public Restaurants(Long id, String restaurant, String address, String website, String description) {
+	public Restaurant(Long id, String nome, String address, String website, String description) {
 		this.id = id;
-		this.restaurant = restaurant;
+		this.nome = nome;
 		this.address = address;
 		this.website = website;
 		this.description = description;
@@ -38,11 +38,11 @@ public class Restaurants {
 	}
 
 	public String getName() {
-		return restaurant;
+		return nome;
 	}
 
-	public void setName(String restaurant) {
-		this.restaurant = restaurant;
+	public void setName(String nome) {
+		this.nome = nome;
 	}
 
 	public String getAddress() {
