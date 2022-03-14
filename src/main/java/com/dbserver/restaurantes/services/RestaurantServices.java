@@ -29,4 +29,9 @@ public class RestaurantServices {
 		RestaurantDTO dto = new RestaurantDTO(result);
 		return dto;
 	}
+	
+	@Transactional
+	public Restaurant addRestaurant(Restaurant newRestaurant) {
+		return repository.saveAndFlush(newRestaurant);
+	}
 }

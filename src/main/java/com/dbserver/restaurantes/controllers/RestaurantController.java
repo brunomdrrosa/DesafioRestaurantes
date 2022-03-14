@@ -5,10 +5,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dbserver.restaurantes.dto.RestaurantDTO;
+import com.dbserver.restaurantes.entities.Restaurant;
 import com.dbserver.restaurantes.services.RestaurantServices;
 
 @RestController
@@ -26,5 +29,10 @@ public class RestaurantController {
 	@GetMapping(value = "/{id}")
 	public RestaurantDTO findById(@PathVariable Long id) {
 		return service.findById(id);
+	}
+
+	@PostMapping
+	public void addRestaurant(@RequestBody Restaurant newRestaurant) {
+		service.addRestaurant(newRestaurant);
 	}
 }

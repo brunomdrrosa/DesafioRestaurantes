@@ -4,7 +4,7 @@ import com.dbserver.restaurantes.entities.Restaurant;
 
 public class RestaurantDTO {
 	private Long id;
-	private String nome;
+	private String restaurant;
 	private String address;
 	private String website;
 	private String description;
@@ -12,20 +12,20 @@ public class RestaurantDTO {
 	public RestaurantDTO() {
 	}
 
-	public RestaurantDTO(Long id, String nome, String address, String website, String description) {
+	public RestaurantDTO(Long id, String restaurant, String address, String website, String description) {
 		this.id = id;
-		this.nome = nome;
+		this.restaurant = restaurant;
 		this.address = address;
 		this.website = website;
 		this.description = description;
 	}
 
-	public RestaurantDTO(Restaurant restaurant) {
-		id = restaurant.getId();
-		nome = restaurant.getName();
-		address = restaurant.getAddress();
-		website = restaurant.getWebsite();
-		description = restaurant.getDescription();
+	public RestaurantDTO(Restaurant restaurantDTO) {
+		id = restaurantDTO.getId();
+		restaurant = restaurantDTO.getName();
+		address = restaurantDTO.getAddress();
+		website = restaurantDTO.getWebsite();
+		description = restaurantDTO.getDescription();
 	}
 
 	public Long getId() {
@@ -37,11 +37,11 @@ public class RestaurantDTO {
 	}
 
 	public String getNome() {
-		return nome;
+		return restaurant;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String restaurant) {
+		this.restaurant = restaurant;
 	}
 
 	public String getAddress() {
