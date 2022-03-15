@@ -32,7 +32,7 @@ public class RestaurantController {
 	}
 
 	@PostMapping
-	public void addRestaurant(@RequestBody Restaurant newRestaurant) {
-		service.addRestaurant(newRestaurant);
+	public Restaurant addRestaurant(@RequestBody Restaurant newRestaurant) {
+		return service.addRestaurant(newRestaurant);
 	}
 }

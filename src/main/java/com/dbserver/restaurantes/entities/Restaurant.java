@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_restaurants")
+@Table(name = "db_restaurants")
 public class Restaurant {
 
 	@Id
@@ -37,11 +37,11 @@ public class Restaurant {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getRestaurant() {
 		return restaurant;
 	}
 
-	public void setName(String restaurant) {
+	public void setRestaurant(String restaurant) {
 		this.restaurant = restaurant;
 	}
 

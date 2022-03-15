@@ -22,7 +22,7 @@ public class RestaurantDTO {
 
 	public RestaurantDTO(Restaurant restaurantDTO) {
 		id = restaurantDTO.getId();
-		restaurant = restaurantDTO.getName();
+		restaurant = restaurantDTO.getRestaurant();
 		address = restaurantDTO.getAddress();
 		website = restaurantDTO.getWebsite();
 		description = restaurantDTO.getDescription();
@@ -36,11 +36,11 @@ public class RestaurantDTO {
 		this.id = id;
 	}
 
-	public String getNome() {
+	public String getRestaurant() {
 		return restaurant;
 	}
 
-	public void setNome(String restaurant) {
+	public void setRestaurant(String restaurant) {
 		this.restaurant = restaurant;
 	}
 

@@ -1,23 +1,30 @@
-package com.dbserver.restaurantes.entities;
+package com.dbserver.restaurantes.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.dbserver.restaurantes.entities.User;
 
-
-@Entity
-@Table(name = "db_users")
-public class User  {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDTO {
 	private Long id;
 	private String username;
 	private String email;
 	private String password;
-	
+
+	public UserDTO() {
+	}
+
+	public UserDTO(Long id, String username, String email, String password) {
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+	}
+
+	public UserDTO(User user) {
+		id = user.getId();
+		username = user.getUsername();
+		email = user.getEmail();
+		password = user.getPassword();
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -49,5 +56,5 @@ public class User  {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }
