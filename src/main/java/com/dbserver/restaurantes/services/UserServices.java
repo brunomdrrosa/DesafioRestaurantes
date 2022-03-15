@@ -37,4 +37,5 @@ public class UserServices {
 		newUser.setPassword(encodedPassword);
 		return repository.saveAndFlush(newUser);
 	}
+	
 }

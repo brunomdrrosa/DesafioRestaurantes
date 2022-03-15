@@ -7,18 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dbserver.restaurantes.entities.User;
-import com.dbserver.restaurantes.services.UserServices;
+import com.dbserver.restaurantes.entities.Vote;
+import com.dbserver.restaurantes.services.VoteServices;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserController {
+@RequestMapping(value = "/votes")
+public class VoteController {
 
 	@Autowired
-	private UserServices service;
-
+	private VoteServices service;
+	
 	@PostMapping
-	public User addUser(@RequestBody User newUser) {
-		return service.addUser(newUser);
+	public Vote vote(@RequestBody User user, Long restaurantId) {
+		Vote created = service.vote(user.getId(), restaurantId);
+		return created;
 	}
-
 }

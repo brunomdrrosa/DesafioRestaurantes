@@ -35,4 +35,5 @@ public class RestaurantController {
 	public Restaurant addRestaurant(@RequestBody Restaurant newRestaurant) {
 		return service.addRestaurant(newRestaurant);
 	}
+	
 }
