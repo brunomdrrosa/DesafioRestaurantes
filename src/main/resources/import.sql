@@ -1,9 +1,21 @@
 INSERT INTO db_users(name, email, password) VALUES ('Bruno', 'bruno@gmail.com', '$2a$10$j1Eic8Okp.IczSVQbU.ru.s.dXoxd1fdzWtK2os9oE9y9ZO8wvMx6');
 INSERT INTO db_users(name, email, password) VALUES ('Pedro', 'pedro@gmail.com', '$2a$10$F/KLm5ULaNRVEL/K6MMeveZXr770G5cI3S7HZnEw.b7TZDENkCWBC');
 INSERT INTO db_users(name, email, password) VALUES ('João', 'joao@gmail.com', '$2a$10$uHZjSrroGBtRBB/V.norRuOcDVz42MXnm0/2yLPGpE3P5XtPRo7L6');
+INSERT INTO db_users(name, email, password) VALUES ('Arthur', 'arthur@gmail.com', '$2a$10$ex3AwXjkiz6dqH4PUD6kTeenOLyMlizQ7P.SJi7cq4RXWTiAaOvcm');
+INSERT INTO db_users(name, email, password) VALUES ('Gabriel', 'gabriel@gmail.com', '$2a$10$B5zQWWCYPif4i9w9BRTQgO6UzObgW9DVqqQJq4sUDl/v8YP4y17Bq');
+INSERT INTO db_users(name, email, password) VALUES ('Helena', 'helena@gmail.com', '$2a$10$VXOyr7o8o3EUy8AhGvmGWuhFAR5DMUJb.YQ4KhIUq3im/kw2Vssl2');
+INSERT INTO db_users(name, email, password) VALUES ('Alice', 'alice@gmail.com', '$2a$10$HfrOM0TFHKsaI31joZP3.O/.XJkSCqPOljBnxAx1.kH0cN.7hk5jG');
+INSERT INTO db_users(name, email, password) VALUES ('Laura', 'laura@gmail.com', '$2a$10$Am5GdgXLKU435vdSRjUKZOYEg1EUEwlodN2sYp951UVI90GnyW39W');
 INSERT INTO db_users(name, email, password) VALUES ('Maria', 'maria@gmail.com', '$2a$10$vZf3OcVDD9PtwcH7BgjV0OulBs8RKTFNhmuUjnr/TxWL6gxVULJJC');
 INSERT INTO db_users(name, email, password) VALUES ('Ana', 'ana@gmail.com', '$2a$10$rwYnYs0q3ThVP9rzG7xAkeSoZEtxC9lbQSX.GeRuu.7tDmlAnGIuS');
 
-INSERT INTO db_restaurants(restaurant, address, website, description) VALUES ('Pasmania', 'Rua Papa João XXIII 60', 'https://pasmania.com.br/', 'Lanchonete e delivery especializado em pastéis tem mais de 80 versões diferentes, além de sanduíches e pratos.');
-INSERT INTO db_restaurants(restaurant, address, website, description) VALUES ('Roda Pizza', 'R. Cônego Pedro Wagner, 590', 'https://deliverydireto.com.br/rodapizza/gravatai', 'Comida brasileira de carnes, massas e pizzas de sabores variados, salgadas e doces, em ambiente familiar.');
-INSERT INTO db_restaurants(restaurant, address, website, description) VALUES ('McDonalds', 'Av. Ipiranga, 5200', 'https://www.mcdonalds.com.br/', 'Rede de fast-food tradicional conhecida por ter ótimos hambúrgueres e batatas fritas.');
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Burger King', 'Av. Ipiranga, 1600', 'https://www.burgerking.com.br/', 'Rede de fast-food famosa com hambúrgueres grelhados, batata frita e milk-shakes.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('McDonalds', 'Av. Ipiranga, 5200', 'https://www.mcdonalds.com.br/', 'Rede de fast-food tradicional conhecida por ter ótimos hambúrgueres e batatas fritas.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Churrascaria Barranco', 'Av. Protásio Alves, 1578', 'http://www.churrascariabarranco.com.br/', 'Churrascaria simples e aconchegante com assentos de madeira e que serve grelhados individuais tradicionais.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Parrilla del Sur', 'Av. Nilópolis, 111', 'https://parrilladelsur.com.br/', 'Churrascaria uruguaia com vinho e área de lazer com supervisor para crianças.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('POA Parrilla', 'Praça Dr. Maurício Cardoso, 49', 'https://poaparrilla.com.br/', 'A parrilla do Moinhos de Vento. Vem comer o teu assado preferido em nosso ambiente intimista e acolhedor.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Nono Ludovico', 'Av. Lavras, 328', 'https://www.nonoludovico.com.br/', 'Uma grande e tranquila pizzaria com sabores e opções tradicionais, além de um salão para festas e reuniões.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Coco Bambu', 'Av. João Wallig, 1800', 'https://cocobambu.com/', 'Frutos do mar e pratos contemporâneos, além de coquetéis e vinhos, em ambiente sofisticado e aconchegante.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Didge Steakhouse', 'R. Des. Augusto Loureiro Lima, 151', 'https://www.didge.com.br/', 'A união de um típico Steakhouse australiano, com toda a descontração de um pub e muito rock’n roll fazem do Didge um pedacinho da Austrália no Brasil.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Atelier de Massas', 'R. Riachuelo, 1482', 'http://www.atelierdemassas.com.br/', 'Restaurante envolvente que serve pratos individuais italianos.', 0);
+INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Le Grand Burger', 'R. Marquês do Pombal, 191', 'https://www.legrandburger.com.br/', 'Bistrô charmoso com hambúrgueres franceses clássicos de sabores gourmet.', 0);
