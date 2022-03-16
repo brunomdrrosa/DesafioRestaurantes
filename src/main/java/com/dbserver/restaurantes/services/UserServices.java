@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dbserver.restaurantes.entities.User;
+import com.dbserver.restaurantes.exceptions.HttpClientErrorException;
+import com.dbserver.restaurantes.exceptions.ResourceNotFoundException;
 import com.dbserver.restaurantes.repositories.UserRepository;
 
 @Service
@@ -33,6 +35,9 @@ public class UserServices {
 
 	@Transactional
 	public User addUser(User newUser) {
+		if (repository.findByEmail(newUser.getEmail()) != null) {
+			throw new HttpClientErrorException("O e-mail informado já existe no sistema");
+		}
 		String encodedPassword = this.passwordEncoder.encode(newUser.getPassword());
 		newUser.setPassword(encodedPassword);
 		return repository.saveAndFlush(newUser);

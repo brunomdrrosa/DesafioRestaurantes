@@ -3,7 +3,7 @@ package com.dbserver.restaurantes.dto;
 public class VoteDTO {
 	private Long restaurantId;
 	private String email;
-	private Double vote;
+	private Double vote = 1.0;
 	
 	public VoteDTO() {}
 

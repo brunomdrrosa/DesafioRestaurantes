@@ -10,6 +10,7 @@ import com.dbserver.restaurantes.dto.VoteDTO;
 import com.dbserver.restaurantes.entities.Restaurant;
 import com.dbserver.restaurantes.entities.User;
 import com.dbserver.restaurantes.entities.Vote;
+import com.dbserver.restaurantes.exceptions.ResourceNotFoundException;
 import com.dbserver.restaurantes.repositories.RestaurantRepository;
 import com.dbserver.restaurantes.repositories.UserRepository;
 import com.dbserver.restaurantes.repositories.VoteRepository;
@@ -31,7 +32,7 @@ public class VoteServices {
 		User user = userRepository.findByEmail(dto.getEmail());
 		
 		if (user == null) {
-			return null;
+			throw new ResourceNotFoundException("O e-mail informado não foi encontrado no sistema");
 		}
 		
 		Restaurant restaurant = restaurantRepository.findById(dto.getRestaurantId()).get();
