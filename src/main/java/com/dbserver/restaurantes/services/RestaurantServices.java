@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dbserver.restaurantes.dto.RestaurantDTO;
 import com.dbserver.restaurantes.entities.Restaurant;
-import com.dbserver.restaurantes.entities.User;
 import com.dbserver.restaurantes.repositories.RestaurantRepository;
 
 @Service

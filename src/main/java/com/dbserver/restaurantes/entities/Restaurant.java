@@ -1,9 +1,13 @@
 package com.dbserver.restaurantes.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,16 +21,21 @@ public class Restaurant {
 	private String address;
 	private String website;
 	private String description;
+	private Integer count;
+
+	@OneToMany(mappedBy = "id.restaurant")
+	private Set<Vote> votes = new HashSet<>();
 
 	public Restaurant() {
 	}
 
-	public Restaurant(Long id, String restaurant, String address, String website, String description) {
+	public Restaurant(Long id, String restaurant, String address, String website, String description, Integer count) {
 		this.id = id;
 		this.restaurant = restaurant;
 		this.address = address;
 		this.website = website;
 		this.description = description;
+		this.count = count;
 	}
 
 	public Long getId() {
@@ -67,6 +76,18 @@ public class Restaurant {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public Set<Vote> getVotes() {
+		return votes;
 	}
 
 }

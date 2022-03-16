@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbserver.restaurantes.entities.User;
-import com.dbserver.restaurantes.entities.Vote;
+import com.dbserver.restaurantes.dto.RestaurantDTO;
+import com.dbserver.restaurantes.dto.VoteDTO;
 import com.dbserver.restaurantes.services.VoteServices;
 
 @RestController
@@ -18,8 +18,8 @@ public class VoteController {
 	private VoteServices service;
 	
 	@PostMapping
-	public Vote vote(@RequestBody User user, Long restaurantId) {
-		Vote created = service.vote(user.getId(), restaurantId);
-		return created;
+	public RestaurantDTO saveVote(@RequestBody VoteDTO dto) {
+		RestaurantDTO restaurantDTO = service.saveVote(dto);
+		return restaurantDTO;
 	}
 }

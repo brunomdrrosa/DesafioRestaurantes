@@ -8,16 +8,18 @@ public class RestaurantDTO {
 	private String address;
 	private String website;
 	private String description;
+	private Integer count;
 
 	public RestaurantDTO() {
 	}
 
-	public RestaurantDTO(Long id, String restaurant, String address, String website, String description) {
+	public RestaurantDTO(Long id, String restaurant, String address, String website, String description, Integer count) {
 		this.id = id;
 		this.restaurant = restaurant;
 		this.address = address;
 		this.website = website;
 		this.description = description;
+		this.count = count;
 	}
 
 	public RestaurantDTO(Restaurant restaurantDTO) {
@@ -26,6 +28,7 @@ public class RestaurantDTO {
 		address = restaurantDTO.getAddress();
 		website = restaurantDTO.getWebsite();
 		description = restaurantDTO.getDescription();
+		count = restaurantDTO.getCount();
 	}
 
 	public Long getId() {
@@ -68,4 +71,11 @@ public class RestaurantDTO {
 		this.description = description;
 	}
 	
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}	
 }
