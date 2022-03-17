@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "db_vote")
+@Table(name = "db_votes")
 public class Vote {
 	
 	@EmbeddedId

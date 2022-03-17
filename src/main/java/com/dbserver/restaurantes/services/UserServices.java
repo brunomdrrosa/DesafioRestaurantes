@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dbserver.restaurantes.entities.User;
 import com.dbserver.restaurantes.exceptions.HttpClientErrorException;
-import com.dbserver.restaurantes.exceptions.ResourceNotFoundException;
 import com.dbserver.restaurantes.repositories.UserRepository;
 
 @Service

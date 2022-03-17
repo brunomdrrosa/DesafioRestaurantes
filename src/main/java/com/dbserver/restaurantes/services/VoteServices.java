@@ -1,5 +1,7 @@
 package com.dbserver.restaurantes.services;
 
+import java.time.LocalDateTime;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import com.dbserver.restaurantes.dto.VoteDTO;
 import com.dbserver.restaurantes.entities.Restaurant;
 import com.dbserver.restaurantes.entities.User;
 import com.dbserver.restaurantes.entities.Vote;
+import com.dbserver.restaurantes.exceptions.AuthenticationException;
 import com.dbserver.restaurantes.exceptions.ResourceNotFoundException;
 import com.dbserver.restaurantes.repositories.RestaurantRepository;
 import com.dbserver.restaurantes.repositories.UserRepository;
@@ -29,12 +32,18 @@ public class VoteServices {
 
 	@Transactional
 	public RestaurantDTO saveVote(VoteDTO dto) {
+		LocalDateTime date;
+//		int dayMonth = date.getDayOfMonth();
+
 		User user = userRepository.findByEmail(dto.getEmail());
-		
+
 		if (user == null) {
 			throw new ResourceNotFoundException("O e-mail informado não foi encontrado no sistema");
 		}
-		
+//		} else if () {
+//			throw new AuthenticationException("Você já votou no dia de hoje, espere até amanhã para votar novamente!");
+//		}
+
 		Restaurant restaurant = restaurantRepository.findById(dto.getRestaurantId()).get();
 
 		Vote vote = new Vote();
@@ -55,4 +64,5 @@ public class VoteServices {
 
 		return new RestaurantDTO(restaurant);
 	}
+	
 }
