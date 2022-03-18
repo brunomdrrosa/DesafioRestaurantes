@@ -1,6 +1,5 @@
 package com.dbserver.restaurantes.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class RestaurantServices {
 	}
 
 	@Transactional(readOnly = true)
-	public Restaurant findWinner(Integer count) throws NotFoundException {
+	public Restaurant findWinner() throws NotFoundException {
 		Optional<Restaurant> data = repository.findFirstByCountGreaterThanEqualOrderByCountDesc(3);
 		if (data.isPresent()) {
 			return data.get();

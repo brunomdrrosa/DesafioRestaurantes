@@ -14,6 +14,8 @@ import com.dbserver.restaurantes.dto.RestaurantDTO;
 import com.dbserver.restaurantes.entities.Restaurant;
 import com.dbserver.restaurantes.services.RestaurantServices;
 
+import io.swagger.v3.oas.annotations.Parameter;
+
 @RestController
 @RequestMapping(value = "/restaurants")
 public class RestaurantController {
@@ -22,7 +24,7 @@ public class RestaurantController {
 	private RestaurantServices service;
 
 	@GetMapping
-	public Page<RestaurantDTO> findAll(Pageable pageable) {
+	public Page<RestaurantDTO> findAll(@Parameter(hidden=true) Pageable pageable) {
 		return service.findAll(pageable);
 	}
 
@@ -32,8 +34,8 @@ public class RestaurantController {
 	}
 	
 	@GetMapping(value = "/winner")
-    public Restaurant findWinner(Integer count) {
-        return service.findWinner(count);     
+    public Restaurant findWinner() {
+        return service.findWinner();     
     };
 
 	@PostMapping

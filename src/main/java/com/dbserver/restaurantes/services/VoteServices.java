@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dbserver.restaurantes.dto.RestaurantDTO;
-import com.dbserver.restaurantes.dto.UserDTO;
 import com.dbserver.restaurantes.dto.VoteDTO;
 import com.dbserver.restaurantes.entities.Restaurant;
 import com.dbserver.restaurantes.entities.User;
