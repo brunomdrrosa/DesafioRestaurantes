@@ -46,6 +46,7 @@ public class RestaurantServices {
 
 	@Transactional
 	public Restaurant addRestaurant(Restaurant newRestaurant) {
+		newRestaurant.setCount(0);
 		return repository.saveAndFlush(newRestaurant);
 	}
 
