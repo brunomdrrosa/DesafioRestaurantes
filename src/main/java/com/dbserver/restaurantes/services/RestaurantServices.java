@@ -1,9 +1,7 @@
 package com.dbserver.restaurantes.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dbserver.restaurantes.dto.RestaurantDTO;
 import com.dbserver.restaurantes.entities.Restaurant;
-import com.dbserver.restaurantes.exceptions.HttpClientErrorException;
 import com.dbserver.restaurantes.exceptions.NotFoundException;
 import com.dbserver.restaurantes.repositories.RestaurantRepository;
 

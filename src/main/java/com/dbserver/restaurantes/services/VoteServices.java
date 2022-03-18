@@ -36,7 +36,7 @@ public class VoteServices {
 		User user = userRepository.findByEmail(dto.getEmail());
 
 		LocalDateTime date = LocalDateTime.now();
-		int dayMonth = date.getDayOfMonth();
+//		int dayMonth = date.getDayOfMonth();
 
 		if (user == null) {
 			throw new ResourceNotFoundException("O e-mail informado não foi encontrado no sistema");
@@ -59,17 +59,12 @@ public class VoteServices {
 
 		vote = voteRepository.saveAndFlush(vote);
 
-	
-		double sum = 0;
-		for (Vote v : restaurant.getVotes()) {
-			sum = sum + v.getValue();
-		}
-
 		restaurant.setCount(restaurant.getVotes().size());
 
 		restaurant = restaurantRepository.save(restaurant);
 
 		return new RestaurantDTO(restaurant);
 	}
+	
 
 }

@@ -22,5 +22,5 @@ public class VoteController {
 		RestaurantDTO restaurantDTO = service.saveVote(dto);
 		return restaurantDTO;
 	}
-	
+		
 }
