@@ -1,13 +1,13 @@
-INSERT INTO db_users(name, email, password) VALUES ('Bruno', 'bruno@gmail.com', '$2a$10$j1Eic8Okp.IczSVQbU.ru.s.dXoxd1fdzWtK2os9oE9y9ZO8wvMx6');
-INSERT INTO db_users(name, email, password) VALUES ('Pedro', 'pedro@gmail.com', '$2a$10$F/KLm5ULaNRVEL/K6MMeveZXr770G5cI3S7HZnEw.b7TZDENkCWBC');
-INSERT INTO db_users(name, email, password) VALUES ('João', 'joao@gmail.com', '$2a$10$uHZjSrroGBtRBB/V.norRuOcDVz42MXnm0/2yLPGpE3P5XtPRo7L6');
-INSERT INTO db_users(name, email, password) VALUES ('Arthur', 'arthur@gmail.com', '$2a$10$ex3AwXjkiz6dqH4PUD6kTeenOLyMlizQ7P.SJi7cq4RXWTiAaOvcm');
-INSERT INTO db_users(name, email, password) VALUES ('Gabriel', 'gabriel@gmail.com', '$2a$10$B5zQWWCYPif4i9w9BRTQgO6UzObgW9DVqqQJq4sUDl/v8YP4y17Bq');
-INSERT INTO db_users(name, email, password) VALUES ('Helena', 'helena@gmail.com', '$2a$10$VXOyr7o8o3EUy8AhGvmGWuhFAR5DMUJb.YQ4KhIUq3im/kw2Vssl2');
-INSERT INTO db_users(name, email, password) VALUES ('Alice', 'alice@gmail.com', '$2a$10$HfrOM0TFHKsaI31joZP3.O/.XJkSCqPOljBnxAx1.kH0cN.7hk5jG');
-INSERT INTO db_users(name, email, password) VALUES ('Laura', 'laura@gmail.com', '$2a$10$Am5GdgXLKU435vdSRjUKZOYEg1EUEwlodN2sYp951UVI90GnyW39W');
-INSERT INTO db_users(name, email, password) VALUES ('Maria', 'maria@gmail.com', '$2a$10$vZf3OcVDD9PtwcH7BgjV0OulBs8RKTFNhmuUjnr/TxWL6gxVULJJC');
-INSERT INTO db_users(name, email, password) VALUES ('Ana', 'ana@gmail.com', '$2a$10$rwYnYs0q3ThVP9rzG7xAkeSoZEtxC9lbQSX.GeRuu.7tDmlAnGIuS');
+INSERT INTO db_users(name, email, password, voted) VALUES ('Bruno', 'bruno@gmail.com', '$2a$10$j1Eic8Okp.IczSVQbU.ru.s.dXoxd1fdzWtK2os9oE9y9ZO8wvMx6', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Pedro', 'pedro@gmail.com', '$2a$10$F/KLm5ULaNRVEL/K6MMeveZXr770G5cI3S7HZnEw.b7TZDENkCWBC', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('João', 'joao@gmail.com', '$2a$10$uHZjSrroGBtRBB/V.norRuOcDVz42MXnm0/2yLPGpE3P5XtPRo7L6', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Arthur', 'arthur@gmail.com', '$2a$10$ex3AwXjkiz6dqH4PUD6kTeenOLyMlizQ7P.SJi7cq4RXWTiAaOvcm', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Gabriel', 'gabriel@gmail.com', '$2a$10$B5zQWWCYPif4i9w9BRTQgO6UzObgW9DVqqQJq4sUDl/v8YP4y17Bq', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Helena', 'helena@gmail.com', '$2a$10$VXOyr7o8o3EUy8AhGvmGWuhFAR5DMUJb.YQ4KhIUq3im/kw2Vssl2', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Alice', 'alice@gmail.com', '$2a$10$HfrOM0TFHKsaI31joZP3.O/.XJkSCqPOljBnxAx1.kH0cN.7hk5jG', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Laura', 'laura@gmail.com', '$2a$10$Am5GdgXLKU435vdSRjUKZOYEg1EUEwlodN2sYp951UVI90GnyW39W', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Maria', 'maria@gmail.com', '$2a$10$vZf3OcVDD9PtwcH7BgjV0OulBs8RKTFNhmuUjnr/TxWL6gxVULJJC', false);
+INSERT INTO db_users(name, email, password, voted) VALUES ('Ana', 'ana@gmail.com', '$2a$10$rwYnYs0q3ThVP9rzG7xAkeSoZEtxC9lbQSX.GeRuu.7tDmlAnGIuS', false);
 
 INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('Burger King', 'Av. Ipiranga, 1600', 'https://www.burgerking.com.br/', 'Rede de fast-food famosa com hambúrgueres grelhados, batata frita e milk-shakes.', 0);
 INSERT INTO db_restaurants(restaurant, address, website, description, count) VALUES ('McDonalds', 'Av. Ipiranga, 5200', 'https://www.mcdonalds.com.br/', 'Rede de fast-food tradicional conhecida por ter ótimos hambúrgueres e batatas fritas.', 0);

@@ -32,27 +32,34 @@ public class VoteServices {
 
 	@Transactional
 	public RestaurantDTO saveVote(VoteDTO dto) {
-		LocalDateTime date;
-//		int dayMonth = date.getDayOfMonth();
 
 		User user = userRepository.findByEmail(dto.getEmail());
+
+		LocalDateTime date = LocalDateTime.now();
+		int dayMonth = date.getDayOfMonth();
 
 		if (user == null) {
 			throw new ResourceNotFoundException("O e-mail informado não foi encontrado no sistema");
 		}
-//		} else if () {
-//			throw new AuthenticationException("Você já votou no dia de hoje, espere até amanhã para votar novamente!");
-//		}
 
 		Restaurant restaurant = restaurantRepository.findById(dto.getRestaurantId()).get();
 
 		Vote vote = new Vote();
+
+		vote.setDate(date);
 		vote.setRestaurant(restaurant);
 		vote.setUser(user);
 		vote.setValue(dto.getVote());
+		
+		if (user.getVoted() == true) {
+			throw new AuthenticationException("Você já votou no dia de hoje, espere até amanhã para votar novamente!");
+		}
+		
+		user.setVoted(true);
 
 		vote = voteRepository.saveAndFlush(vote);
 
+	
 		double sum = 0;
 		for (Vote v : restaurant.getVotes()) {
 			sum = sum + v.getValue();
@@ -64,5 +71,5 @@ public class VoteServices {
 
 		return new RestaurantDTO(restaurant);
 	}
-	
+
 }

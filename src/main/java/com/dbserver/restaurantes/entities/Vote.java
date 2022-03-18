@@ -1,5 +1,7 @@
 package com.dbserver.restaurantes.entities;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -11,6 +13,7 @@ public class Vote {
 	@EmbeddedId
 	private VotePK id = new VotePK();
 	private Double value;
+	private LocalDateTime date;
 	
 	public Vote() {}
 	
@@ -37,6 +40,13 @@ public class Vote {
 	public void setValue(Double value) {
 		this.value = value;
 	}
-	
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}	
 	
 }

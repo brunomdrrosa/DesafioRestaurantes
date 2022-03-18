@@ -1,9 +1,12 @@
 package com.dbserver.restaurantes.dto;
 
+import java.time.LocalDateTime;
+
 public class VoteDTO {
 	private Long restaurantId;
 	private String email;
 	private Double vote = 1.0;
+	private LocalDateTime date = LocalDateTime.now();
 	
 	public VoteDTO() {}
 
@@ -30,6 +33,13 @@ public class VoteDTO {
 	public void setVote(Double vote) {
 		this.vote = vote;
 	}
-	
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}	
 	
 }

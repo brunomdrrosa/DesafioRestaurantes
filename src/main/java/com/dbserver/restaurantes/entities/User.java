@@ -20,6 +20,7 @@ public class User  {
 	private String username;
 	private String email;
 	private String password;
+	private Boolean voted = false;
 	
 	public Long getId() {
 		return id;
@@ -52,5 +53,14 @@ public class User  {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Boolean getVoted() {
+		return voted;
+	}
+
+	public void setVoted(Boolean voted) {
+		this.voted = voted;
+	}
+	
 	
 }

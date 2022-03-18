@@ -7,15 +7,17 @@ public class UserDTO {
 	private String username;
 	private String email;
 	private String password;
+	private Boolean voted = false;
 
 	public UserDTO() {
 	}
 
-	public UserDTO(Long id, String username, String email, String password) {
+	public UserDTO(Long id, String username, String email, String password, Boolean voted) {
 		this.id = id;
 		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.voted = voted;
 	}
 
 	public UserDTO(User user) {
@@ -23,6 +25,7 @@ public class UserDTO {
 		username = user.getUsername();
 		email = user.getEmail();
 		password = user.getPassword();
+		voted = user.getVoted();
 	}
 
 	public Long getId() {
@@ -57,4 +60,13 @@ public class UserDTO {
 		this.password = password;
 	}
 
+	public Boolean getVoted() {
+		return voted;
+	}
+
+	public void setVoted(Boolean voted) {
+		this.voted = voted;
+	}
+
+	
 }

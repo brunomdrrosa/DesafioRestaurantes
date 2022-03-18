@@ -41,14 +41,14 @@ public class RestaurantServices {
 		List<Restaurant> restaurants = repository.findAll();
 
 		for (Restaurant restaurant : restaurants) {
-			Hibernate.initialize(restaurant.getCount());
+			// Hibernate.initialize(restaurant.getCount());
 			if (restaurant.getCount() >= 3) {
 				return restaurant;
 			}
 		}
 		throw new NotFoundException(
 				"Nenhum restaurante ganhou a votação, é necessário um total de 3 votos para ter um restaurante vencedor.");
-	}
+	}	
 
 	@Transactional
 	public Restaurant addRestaurant(Restaurant newRestaurant) {
