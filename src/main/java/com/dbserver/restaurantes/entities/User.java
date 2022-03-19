@@ -7,21 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "db_users")
-public class User  {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name="Name")
+
+	@Column(name = "Name")
 	private String username;
 	private String email;
 	private String password;
 	private Boolean voted = false;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -61,6 +60,5 @@ public class User  {
 	public void setVoted(Boolean voted) {
 		this.voted = voted;
 	}
-	
-	
+
 }

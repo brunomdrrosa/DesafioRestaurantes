@@ -3,6 +3,7 @@ package com.dbserver.restaurantes.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,6 @@ public class UserServices {
 
 	PasswordEncoder passwordEncoder;
 
-	
 	public UserServices(UserRepository userRepository) {
 		this.passwordEncoder = new BCryptPasswordEncoder();
 	}
@@ -42,4 +42,15 @@ public class UserServices {
 		return repository.saveAndFlush(newUser);
 	}
 	
+	@Scheduled(cron = "0 30 22 * * *")
+	  public void resetVotes() throws InterruptedException {
+	    
+		List<User> userArray = repository.findAll();
+		for(User user: userArray ) {
+			user.setVoted(false);
+		}
+		
+		repository.saveAllAndFlush(userArray);
+	  }
+
 }

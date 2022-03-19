@@ -13,7 +13,7 @@ import com.dbserver.restaurantes.entities.Restaurant;
 import com.dbserver.restaurantes.entities.User;
 import com.dbserver.restaurantes.entities.Vote;
 import com.dbserver.restaurantes.exceptions.AuthenticationException;
-import com.dbserver.restaurantes.exceptions.ResourceNotFoundException;
+import com.dbserver.restaurantes.exceptions.NotFoundException;
 import com.dbserver.restaurantes.repositories.RestaurantRepository;
 import com.dbserver.restaurantes.repositories.UserRepository;
 import com.dbserver.restaurantes.repositories.VoteRepository;
@@ -36,17 +36,16 @@ public class VoteServices {
 		User user = userRepository.findByEmail(dto.getEmail());
 
 		LocalDateTime date = LocalDateTime.now();
-		int dayMonth = date.getDayOfMonth();
 
 		if (user == null) {
-			throw new ResourceNotFoundException("O e-mail informado não foi encontrado no sistema");
+			throw new NotFoundException("O e-mail informado não foi encontrado no sistema");
 		}
 
 		Restaurant restaurant = restaurantRepository.findById(dto.getRestaurantId()).get();
 
 		Vote vote = new Vote();
-		
-	    vote.setDate(date);
+
+		vote.setDate(date);
 		vote.setRestaurant(restaurant);
 		vote.setUser(user);
 		vote.setValue(dto.getVote());
@@ -65,15 +64,5 @@ public class VoteServices {
 
 		return new RestaurantDTO(restaurant);
 	}
-	
-	public RestaurantDTO resetVotes(VoteDTO dto) {
-		User user = userRepository.findByEmail(dto.getEmail());
-		user.setVoted(false);
-		
-		Restaurant restaurant = (Restaurant) restaurantRepository.findAll();
-		restaurant.setCount(0);
-		restaurant = restaurantRepository.save(restaurant);
 
-		return new RestaurantDTO(restaurant);
-	}
 }

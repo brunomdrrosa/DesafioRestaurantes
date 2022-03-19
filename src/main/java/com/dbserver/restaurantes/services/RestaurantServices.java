@@ -1,10 +1,12 @@
 package com.dbserver.restaurantes.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,5 +51,16 @@ public class RestaurantServices {
 		newRestaurant.setCount(0);
 		return repository.saveAndFlush(newRestaurant);
 	}
+	
+	@Scheduled(cron = "0 30 22 * * *")
+	  public void resetCount() throws InterruptedException {
+	    
+		List<Restaurant> restaurantArray = repository.findAll();
+		for(Restaurant restaurant: restaurantArray) {
+			restaurant.setCount(0);
+		}
+		
+		repository.saveAllAndFlush(restaurantArray);
+	  }
 
 }
