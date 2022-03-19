@@ -1,6 +1,7 @@
 package com.dbserver.restaurantes.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,18 +35,15 @@ public class RestaurantServices {
 	}
 
 	@Transactional(readOnly = true)
-	public Restaurant findWinner(Integer count) {
-		List<Restaurant> restaurants = repository.findAll();
-
-		for (Restaurant restaurant : restaurants) {
-			// Hibernate.initialize(restaurant.getCount());
-			if (restaurant.getCount() >= 3) {
-				return restaurant;
-			}
+	public Restaurant findWinner(Integer count) throws NotFoundException {
+		Optional<Restaurant> data = repository.findFirstByCountGreaterThanEqualOrderByCountDesc(3);
+		if (data.isPresent()) {
+			return data.get();
 		}
+
 		throw new NotFoundException(
 				"Nenhum restaurante ganhou a votação, é necessário um total de 3 votos para ter um restaurante vencedor.");
-	}	
+	}
 
 	@Transactional
 	public Restaurant addRestaurant(Restaurant newRestaurant) {
