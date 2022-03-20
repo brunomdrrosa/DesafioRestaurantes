@@ -52,7 +52,7 @@ public class RestaurantServices {
 		return repository.saveAndFlush(newRestaurant);
 	}
 	
-	@Scheduled(cron = "0 30 22 * * *")
+	@Scheduled(cron = "0 00 18 * * *")
 	  public void resetCount() throws InterruptedException {
 	    
 		List<Restaurant> restaurantArray = repository.findAll();

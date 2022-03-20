@@ -42,7 +42,7 @@ public class UserServices {
 		return repository.saveAndFlush(newUser);
 	}
 	
-	@Scheduled(cron = "0 30 22 * * *")
+	@Scheduled(cron = "0 00 18 * * *")
 	  public void resetVotes() throws InterruptedException {
 	    
 		List<User> userArray = repository.findAll();
